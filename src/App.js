@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import CheckBalance from "./components/CheckBalance";
+import CheckForNFT from "./components/CheckForNFT";
+import ReplyInComments from "./components/ReplyInComments";
+import TweetWithTag from "./components/TweetWithTag";
 
 function App() {
+  const [appState, setAppState] = useState({});
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <CheckBalance appState={appState} setAppState={setAppState} />
+      <CheckForNFT appState={appState} setAppState={setAppState} />
+      <ReplyInComments appState={appState} setAppState={setAppState} />
+      <TweetWithTag appState={appState} setAppState={setAppState} />
+    </>
   );
 }
 
