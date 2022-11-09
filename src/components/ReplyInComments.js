@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import TwitterLogin from "react-twitter-login";
 
 function ReplyInComments(props) {
   // for reference: https://developer.twitter.com/en/docs/twitter-api/v1/tweets/post-and-engage/api-reference/post-statuses-update#parameters
@@ -20,13 +21,27 @@ function ReplyInComments(props) {
     });
   };
 
+  const authHandler = (err, data) => {
+    console.log(err, data);
+  };
+
   return (
     <div>
       <button
-        onClick={() => postReply("Hello, this is sample text to reply", "1445880548472328192")}
+        onClick={() =>
+          postReply(
+            "Hello, this is sample text to reply",
+            "1445880548472328192"
+          )
+        }
       >
         3 > Reply to a particular status
       </button>
+      <TwitterLogin
+        authCallback={authHandler}
+        consumerKey="ZAM3WiGCEXHHawvpMlejBIcQw"
+        consumerSecret="QWFLQUs0MbpadSFWBtDPGQAte1ff0HFCD5FzNOvMRAoSCwTrzY"
+      />
     </div>
   );
 }
