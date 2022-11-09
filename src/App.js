@@ -12,8 +12,8 @@ function App() {
     <>
       <CheckBalance appState={appState} setAppState={setAppState} />
       <CheckForNFT appState={appState} setAppState={setAppState} />
-      <ReplyInComments appState={appState} setAppState={setAppState} />
-      <TweetWithTag appState={appState} setAppState={setAppState} />
+      {/* <ReplyInComments appState={appState} setAppState={setAppState} />
+      <TweetWithTag appState={appState} setAppState={setAppState} /> */}
     </>
   );
 }

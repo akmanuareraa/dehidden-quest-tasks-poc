@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 function TweetWithTag(props) {
@@ -12,6 +12,8 @@ function TweetWithTag(props) {
     withCredentials: true,
   });
 
+  const [link, setLink] = useState();
+
   const postTweet = (text, statusId, accountToBeTagged) => {
     return api.get("/statuses/update.json", {
       status: text + accountToBeTagged,
@@ -22,8 +24,20 @@ function TweetWithTag(props) {
 
   return (
     <div>
+      {/* <a href="https://twitter.com/intent/tweet?text=I%20am%20tagging%20%40${account}&utm_source=dehidden.com&utm_medium=dehiddden_quest">
+        Tweet
+      </a> */}
       <button
-        onClick={() => postTweet("Hello, this is sample text to reply", "1445880548472328192", "@testaccount")}
+        onClick={() => {
+          let link =
+            "https://twitter.com/intent/tweet?text=I%20am%20tagging%20%40@manu_areraa&utm_source=dehidden.com&utm_medium=dehiddden_quest";
+          setLink(link);
+          // postTweet(
+          //   "Hello, this is sample text to reply",
+          //   "1445880548472328192",
+          //   "@testaccount"
+          // );
+        }}
       >
         4 > Post a Tweet
       </button>

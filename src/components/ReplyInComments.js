@@ -27,7 +27,7 @@ function ReplyInComments(props) {
 
   return (
     <div>
-      <button
+      {/* <button
         onClick={() =>
           postReply(
             "Hello, this is sample text to reply",
@@ -41,7 +41,7 @@ function ReplyInComments(props) {
         authCallback={authHandler}
         consumerKey="ZAM3WiGCEXHHawvpMlejBIcQw"
         consumerSecret="QWFLQUs0MbpadSFWBtDPGQAte1ff0HFCD5FzNOvMRAoSCwTrzY"
-      />
+      /> */}
     </div>
   );
 }
